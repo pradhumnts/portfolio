@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Signup{% endblock %}
+{% block body %}
+
+    <div>
+        <h3>Create an account</h3>
+   <div>
+    <p>Already have an account?</p>
+   <a href="{% url 'login' %}"> Log in </a>
+   </div>
+   <br>
+   <div style="width:500px;">
+   <form method="post"> 
+    {% csrf_token %}
+        {{ form.as_table }}
+        <p><button class="creat-account-button" type="submit">Create account</button></p>
+    </form>
+</div>
+</div>
+
+{% endblock %}
